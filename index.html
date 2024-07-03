@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="main.css" />
+		<title>Начальная страница</title>
+	</head>
+	<body>
+		<div>
+			<input
+				type="text"
+				id="srch"
+				placeholder="Найти в интернете"
+				onkeydown="if (event.keyCode == 13 || event.which == 13) { location='http://www.google.com/search?q=' + encodeURIComponent(document.getElementById('srch').value);}"
+				autocomplete="off"
+			/>
+			<time id="currentTime"></time>
+		</div>
+		<div id="con">
+			<div id="con1">
+				<a href="https://www.youtube.com">Youtube</a>
+				<a href="https://www.twitch.tv">Twitch</a>
+				<a href="https://github.com">Github</a>
+			</div>
+			<div id="con1">
+				<a href="https://jut.su">Anime</a>
+				<a href="https://osu.ppy.sh">Osu</a>
+				<a href="https://freetp.org">Shit</a>
+			</div>
+		</div>
+	</body>
+	<script>
+		var timeElement = document.getElementById('currentTime')
+		setInterval(function () {
+			var currentTime = new Date()
+			timeElement.textContent = currentTime.toLocaleTimeString()
+		}, 100)
+	</script>
+</html>
